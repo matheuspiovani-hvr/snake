@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ranking</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="scripts/snake/persistence.js"></script>
+	<script src="scripts/snake/score.js"></script>
+	
+	<script src="scripts/libs/bootbox.all.min.js"></script>
+	<script src="scripts/libs/bootstrap.min.js"></script>
+	<script src="scripts/libs/datatables.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="stylesheet" type="text/css" href="css/libs/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/libs/datatables.min.css">
+</head>
+<body>
+	<a href="game.html">Jogar</a>
+
+	<table id="scoresTable" class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Pontuação</th>
+				<th>Duração</th>
+				<th>Tamanho</th>
+				<th>Data</th>
+			</tr>
+			<tbody>
+				
+			</tbody>
+		</thead>	
+	</table>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			Persistence.getScores(function(scores) {
+				let tableData = [];
+
+				for(let i = 0; i < scores.length; i++) {
+					let score = new Score(scores[i]);
+					let line = [];
+					line.push(score.playerName);
+					line.push(score.value);
+					line.push(score.gameDuration);
+					line.push(score.length);
+					line.push(score.startTime);
+
+					tableData.push(line);
+				}
+				$("#scoresTable").DataTable({
+					data: tableData
+				});
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="scripts/snake/snake.js"></script>
+	<script src="scripts/snake/point.js"></script>
+	<script src="scripts/snake/persistence.js"></script>
+	<script src="scripts/snake/score.js"></script>
+	<script src="scripts/libs/bootbox.all.min.js"></script>
+	<script src="scripts/libs/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/libs/bootstrap.min.css">
+</head>
+<body>
+	<div id="gameContainer" class="game-container"></div>
+	<a href="ranking.html">Ranking</a>
+	<script type="text/javascript">
+		window.onload = function() {
+			let snake = new Snake("gameContainer");
+		};
+	</script>
+</body>
+</html>

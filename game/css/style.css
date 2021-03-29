@@ -1,0 +1,39 @@
+.game-container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.game-canvas {
+	border: 1px;
+	border-style: solid;
+	border-radius: 1px;
+}
+
+.score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 4px;
+}
+
+.snake-button {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fullwidth-align-center {
+	width: 100%;
+	text-align: center;
+}
+
+a {
+	background: antiquewhite;
+    padding: 4px;
+    float: right;
+    color: black;
+    font-weight: 500;
+}
